@@ -11,6 +11,14 @@
 |
 */
 
+use App\Category;
+use Illuminate\Http\Response;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/categories', function () {
+	$categories = Category::all();
+    return response()->json($categories);
 });
