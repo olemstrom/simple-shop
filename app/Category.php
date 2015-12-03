@@ -8,4 +8,18 @@ class Category extends Model
 {
     protected $table = "category";
     protected $primaryKey = "categoryid";
+    public $timestamps = false;
+
+    protected $fillable = array('name');
+
+
+    public function products()
+    {
+        return $this->belongsToMany('App\Product', "in_category", "categoryid", "productid");
+    }
+
+    public function ids()
+    {
+        return $this->belongsToMany('App\Product', "in_category", "categoryid", "productid")->select(array("categoryid"));
+    }
 }
