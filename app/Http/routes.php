@@ -26,6 +26,21 @@ Route::get('userHome', function() {
 	return view('todo.user.user1');
 });
 
+Route::get('computer', function() {
+	return view('todo.user.user2');
+});
+
+Route::get('elctronics', function() {
+	return view('todo.user.user3');
+});
+
+Route::get('homeAppliance', function() {
+	return view('todo.user.user4');
+});
+
+Route::get('games', function() {
+	return view('todo.user.user5');
+});
 
 Route::get('/admin', 'AdminController@getHome');
 
