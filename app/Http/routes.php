@@ -22,6 +22,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('userHome', function() {
+	return view('todo.user.user1');
+});
+
+
 Route::get('/admin', 'AdminController@getHome');
 
 Route::get('/admin/add-product', 'AdminController@getAddProduct');

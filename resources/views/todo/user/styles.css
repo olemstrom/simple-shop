@@ -1,0 +1,36 @@
+    .middle {
+    	padding-top: 0px;
+  		background-color: #f1f1f1;
+    	height: 100%;
+    }
+		.navbar {
+			padding-bottom: 0;
+			border-radius: 0;
+		}
+  	.container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .container {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    .navigation {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }	
+		.bg-4 { 
+    		background-color: #2f2f2f;
+    		color: #ffffff;
+		}
+		.bg-1 {
+			background-color: #1abc9c;
+    		color: #ffffff;
+		}
+		a {
+			text-transform: uppercase;
+			color: #2f2f2f;
+		}

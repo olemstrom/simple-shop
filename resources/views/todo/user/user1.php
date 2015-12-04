@@ -24,3 +24,4 @@
 		<a class="a" href="http://users.metropolia.fi/~aleksniv/awsomeWebstore/user/user5.html"><span class="glyphicon glyphicon-pawn"></span>Gaming</a>
 	</div>
 </div>
+@endsection
