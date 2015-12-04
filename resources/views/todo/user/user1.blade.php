@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('todo.user.main')
 @section('tabs')
 <li class="active"><a href="http://users.metropolia.fi/~aleksniv/awsomeWebstore/user/user1.html">Home</a></li>
 <li><a href="http://users.metropolia.fi/~aleksniv/awsomeWebstore/user/user2.html">Computers</a></li>
