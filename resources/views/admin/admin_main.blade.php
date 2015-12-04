@@ -8,7 +8,8 @@
 	<a href="/admin/add-product">add product</a> ;
 	<a href="/admin/add-category">add category</a> ;
 	<a href="/admin/modify-products">modify products</a> ;
-	<a href="/admin/modify-categories">modify categories</a>
+	<a href="/admin/modify-categories">modify categories</a> ;
+	<a href="/admin/manage-orders">manage-orders</a>
 	<div>
 		@yield('content')
 	</div>

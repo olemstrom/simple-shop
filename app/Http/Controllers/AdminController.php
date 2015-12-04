@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Admin;
 use App\Category;
 use App\Product;
+use App\Order;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -130,6 +131,27 @@ class AdminController extends Controller
         ]);
     }
 
+    public function getManageOrders(Request $request) {
+        return view('admin.manage_orders', [
+            "orders" => Order::with('client', 'products')->get()
+        ]);
+    }
+
+    public function deleteOrders(Request $request) {
+        foreach($request->order as $id) {
+            $order = Order::find($id);
+            foreach($order->products as $product) {
+
+                $product->count += $product->pivot->count;
+                $product->save();
+            }
+
+            $order->delete();
+
+        }
+
+        return redirect("/admin/manage-orders");
+    }
 
     protected function validator(array $data)
     {

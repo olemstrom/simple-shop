@@ -38,17 +38,16 @@ Route::get('/admin/modify-categories', 'AdminController@getModifyCategories');
 Route::post('/admin/modify-categories', 'AdminController@postModifyCategories');
 Route::post('/admin/delete-category', 'AdminController@deleteCategory');
 
+Route::get('/admin/manage-orders', 'AdminController@getManageOrders');
+Route::post('/admin/delete-orders', 'AdminController@deleteOrders');
+
+
 Route::get('/product-list', 'ProductController@getProductList');
 Route::post('/add-to-cart', 'ProductController@addProductToCart');
 
 Route::get('/checkout', 'CheckoutController@getCheckout');
 Route::post('/create-order', 'CheckoutController@createOrder');
 
-
-Route::get('/categories', function (Request $request) {
-	$c = Product::with('categories')->get();
-    return response()->json($request->user());
-});
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');

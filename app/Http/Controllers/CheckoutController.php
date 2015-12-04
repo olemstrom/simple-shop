@@ -49,6 +49,7 @@ class CheckoutController extends Controller
         	$order->products()->attach($productid, ["count" => $count]);
         	$p = Product::find($productid);
         	$p->count -= $count;
+        	$p->save();
         }
 
         Cart::clear();        
