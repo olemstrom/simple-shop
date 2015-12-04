@@ -42,6 +42,18 @@ Route::get('games', function() {
 	return view('todo.user.user5');
 });
 
+Route::get('adminHome', function() {
+	return view('todo.admin.view1');
+});
+
+Route::get('adminAddProduct', function() {
+	return view('todo.admin.view2');
+});
+
+Route::get('adminDelOrModProd', function() {
+	return view('todo.admin.view3');
+});
+
 Route::get('/admin', 'AdminController@getHome');
 
 Route::get('/admin/add-product', 'AdminController@getAddProduct');
