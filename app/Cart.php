@@ -24,7 +24,11 @@ class Cart {
 		return self::getCart();
 	}
 
-	private static function getCart() {
+	public static function clear() {
+		session()->put("cart", []);
+	}
+
+ 	private static function getCart() {
     	$cart = session()->get("cart");
 
     	if(is_null($cart)) return [];

@@ -31,4 +31,8 @@ class Product extends Model
     public function hasCategory($categoryid) {
     	return $this->categories->contains($categoryid);
     }
+
+    public function orders() {
+        return $this->belongsToMany("App\Order", "in_category", "productid", "orderid");
+    }
 }
