@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<title>User 5</title>
+	<style>
+		.sidenav {
+     		padding-top: 0px;
+      		background-color: #ffffff;
+      	}
+		.navbar {
+			padding-bottom: 0;
+			border-radius: 0;
+		}
+  		.container-fluid {
+      		padding-top: 70px;
+      		padding-bottom: 70px;
+      		position: fixed;
+    		bottom: 0;
+    		width: 100%;
+  		}
+  		.container {
+  			padding-top: 20px;
+  			padding-bottom: 20px;
+  		}
+  		.navigation {
+  			padding-top: 5px;
+  			padding-bottom: 5px;
+  		}
+		.bg-4 { 
+
+    		background-color: #2f2f2f;
+    		color: #ffffff;
+		}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+	  <div class="navigation">
+	    <div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		     	<span class="icon-bar"></span>                        
+		    </button>
+	      	<a class="navbar-brand" href="#">Awsome Webstore</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      	<ul class="nav navbar-nav">
+		        <li><a href="http://users.metropolia.fi/~aleksniv/awsomeWebstore/user/user1.html">Home
+		        </a></li>
+		        <li><a href="http://users.metropolia.fi/~aleksniv/awsomeWebstore/user/user2.html">Computers
+		        </a></li>
+		        <li><a href="http://users.metropolia.fi/~aleksniv/awsomeWebstore/user/user3.html">Electronics
+		        </a></li>
+		        <li><a href="http://users.metropolia.fi/~aleksniv/awsomeWebstore/user/user4.html">Home Appliance</a></li>
+		        <li class="active"><a href="http://users.metropolia.fi/~aleksniv/awsomeWebstore/user/user5.html">Gaming
+		        </a></li>
+	      	</ul>
+		    <ul class="nav navbar-nav navbar-right">
+		    	<li><a href="#" data-toggle="popover" data-placement="bottom" title="Items in your shopping cart" data-content="Empty"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+		      	<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+		        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+		        
+		    </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<script>
+		$(document).ready(function(){
+    		$('[data-toggle="popover"]').popover(); 
+		});
+	</script>
+
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-md-2 sidenav">
+				
+			</div>
+			<div class="col-md-8 text-left">
+
+			</div>
+			<div class="col-md-2 sidenav">
+				
+			</div>
+		</div>
+	</div>
+
+	<footer class="container-fluid bg-4 text-center">
+		<p>Online store</p>
+	</footer>
+	
+</body>
+</html>
