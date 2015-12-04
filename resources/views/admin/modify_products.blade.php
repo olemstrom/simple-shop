@@ -36,7 +36,7 @@
 						@if ($product->hasCategory($category->categoryid))
 							selected
 						@endif
-	            		>{{$category->name}}</option>
+	            		>{{$category->displayname}}</option>
 	        	@endforeach
 			</select>
 

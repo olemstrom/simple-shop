@@ -67,11 +67,25 @@ class AdminController extends Controller
             'name' => 'required|max:255'
         ]);
 
-        Category::create([
-            'name' => $request->name,
-        ]);
+        $trimmedName = $this->cleanName($request->name);
+        
 
+        Category::create([
+            'name' => $trimmedName,
+            'displayname' => $request->name,
+            'navitem' => !is_null($request->navitem)
+        ]);
+        
         return view('admin.add_category');
+    }
+
+    private function cleanName($name) {
+        $trimmedName = strtolower($name);
+        $trimmedName = str_replace(" ", "-", $trimmedName);
+        $trimmedName = preg_replace("/[^A-Za-z0-9\-]/", "", $trimmedName);
+
+        return $trimmedName;
+
     }
 
     public function getModifyProducts() {
@@ -117,7 +131,14 @@ class AdminController extends Controller
 
     public function postModifyCategories(Request $request) {
         $category = Category::find($request->id);
-        $category->update(["name" => $request->name]);
+        $isNavitem = !is_null($request->navitem);
+
+        $category->update([
+            "displayname" => $request->name,
+            "name" => $this->cleanName($request->name),
+            "navitem" => $isNavitem
+        ]);
+
 
         return redirect("admin/modify-categories");
     }

@@ -11,7 +11,7 @@
 			<div style="max-width:70%; float:left;">
 					{!! csrf_field() !!}
 					<input type="hidden" name="id" value="{{$category->categoryid}}" />
-					<input type="text" name="name" value="{{$category->name}}" />
+					<input type="text" name="name" value="{{$category->displayname}}" />
 			</div>
 			<div style="max-width:15%; float:left;">
 				<input type="submit" value="Save">

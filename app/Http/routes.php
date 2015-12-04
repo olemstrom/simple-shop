@@ -19,12 +19,12 @@ use Illuminate\Http\Request;
 
 \Debugbar::enable();
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', [
+    	"allCategories" => Category::all()
+	]);
 });
 
-Route::get('userHome', function() {
-	return view('todo.user.user1');
-});
+Route::get('/category/{categoryname}', 'ProductController@getProductsByCategory');
 
 Route::get('computer', function() {
 	return view('todo.user.user2');

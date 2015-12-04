@@ -36,7 +36,7 @@
 				Categories: <br/>
 				<select name="categories[]" id="categories" multiple>
 					@foreach ($categories as $category)
-	                	<option value="{{$category->categoryid}}">{{$category->name}}</option>
+	                	<option value="{{$category->categoryid}}">{{$category->displayname}}</option>
 	            	@endforeach
 				</select>	
 			</label>

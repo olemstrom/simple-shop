@@ -10,7 +10,7 @@ class Category extends Model
     protected $primaryKey = "categoryid";
     public $timestamps = false;
 
-    protected $fillable = array('name');
+    protected $fillable = array('name', "navitem", "displayname");
 
 
     public function products()

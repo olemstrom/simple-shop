@@ -20,6 +20,12 @@ class ProductController extends Controller
     	]);
     }
 
+    public function getProductsByCategory($categoryname) {
+        return view('product.by_category', [
+            "products" => Category::where('name', $categoryname)->first()->products
+        ]);
+    }
+
     public function addProductToCart(Request $request) {
     	
     	$products = $request->product;

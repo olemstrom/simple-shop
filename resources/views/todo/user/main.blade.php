@@ -18,11 +18,14 @@
 			        <span class="icon-bar"></span>
 			     	<span class="icon-bar"></span>                        
 			    </button>
-		      	<a class="navbar-brand" href="#">Awsome Webstore</a>
+		      	<a class="navbar-brand" href="/">Awsome Webstore</a>
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      	<ul class="nav navbar-nav">
-			        @yield('tabs')
+		      		<li class="{{activeClass('home')}}"><a href="/">Home</a></li>
+		      		@foreach($navCategories as $category)
+						<li class="{{activeClass($category)}}"><a href="/category/{{$category->name}}">{{$category->displayname}}</a></li>
+		      		@endforeach
 		      	</ul>
 			    <ul class="nav navbar-nav navbar-right">
 			    	<li><a href="" data-toggle="popover" data-placement="bottom" title="Items in your shopping cart" data-content="Empty"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
@@ -31,22 +34,16 @@
 		  </div>
 		</nav>
 
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-md-2 sidenav">
-					
-				</div>
-				<div class="col-md-8 text-center">
-					@yield('content')
-				</div>
-				<div class="col-md-2 sidenav">
-					
-				</div>
+		<div class="container-fluid">
+			<div class="col-md-8 text-center center-block">
+				@yield('content')
 			</div>
 		</div>
 
+		<!--
 		<footer class="container-fluid bg-4 text-center">
 			<p>Online store</p>
 		</footer>
+	-->
 	</body>
 </html>

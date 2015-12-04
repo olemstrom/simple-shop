@@ -30,3 +30,11 @@ function cartTotal() {
 function fullName($client) {
 	return $client->firstname . " " . $client->lastname;
 }
+
+function activeClass($category) {
+	$path = trim(Route::getCurrentRoute()->getPath());
+	$isHome = $category == "home" && $path == "/";
+	$isCategoryPage = $category != "home" && "/category/" . $category->name == $path;
+	if($isHome || $isCategoryPage) return "active";
+	else return "";
+}

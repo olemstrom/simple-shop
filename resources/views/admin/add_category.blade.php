@@ -9,6 +9,10 @@
 			<input type="text" name="name" placeholder="Category here">
 		</p>
 
+		<p>
+			Show on navigation <input type="checkbox" name="navitem" value="true">
+		</p>
+
 		<input type="submit" value="Add category"/>	
 	</form>
 	

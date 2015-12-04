@@ -8,9 +8,7 @@
 	border-radius: 0;
 }
 .container-fluid {
-  padding-top: 70px;
   padding-bottom: 70px;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -33,4 +31,13 @@
 a {
 	text-transform: uppercase;
 	color: #2f2f2f;
+}
+
+.center-block {
+  float:none;
+  margin:0 auto;
+}
+
+html, body {
+  height: 100%;
 }
