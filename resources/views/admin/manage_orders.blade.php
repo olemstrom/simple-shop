@@ -1,13 +1,13 @@
-@extends("admin.admin_main")
+@extends("todo.admin.main")
 @section("title", "Admin view - Manage orders")
 @section("content")
-	<p>Manage orders</p>
+	<h1>Manage orders</h1>
 
 	<form method="post" action="/admin/delete-orders">
 		{!! csrf_field() !!}
 		
 		@forelse($orders as $order)
-			<div class="order">
+			<div class="order border-bottom">
 				<input type="checkbox" name="order[]" value="{{$order->orderid}}">
 				<h3>#{{$order->orderid}}</h3>
 				<p><strong>Client:</strong> <br/>
@@ -24,7 +24,7 @@
 				</p>
 			</div>
 		@empty
-		No products sorge :<
+		No orders sorge :<
 		@endforelse
 
 		<input type="submit" value="Delete orders"/>	

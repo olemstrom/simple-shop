@@ -22,8 +22,11 @@
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      	<ul class="nav navbar-nav">
 			        <li><a href="/admin">Home</a></li>
-					<li><a href="/admin/add-product">Lisää tuote</a></li>
-					<li><a href="/admin/modify-products">Tuotteiden hallinta</a></li>
+					<li><a href="/admin/add-product">Add product</a></li>
+					<li><a href="/admin/add-category">Add category</a></li>
+					<li><a href="/admin/modify-products">Manage products</a></li>
+					<li><a href="/admin/modify-categories">Manage categories</a></li>
+					<li><a href="/admin/manage-orders">Manage orders</a></li>
 		      	</ul>
 			    <ul class="nav navbar-nav navbar-right">
 			    	<li><a href="/auth/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>

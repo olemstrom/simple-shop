@@ -10,6 +10,8 @@ use App\Order;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Redirect;
+
 class AdminController extends Controller
 {
     
@@ -140,16 +142,14 @@ class AdminController extends Controller
         ]);
 
 
-        return redirect("admin/modify-categories");
+        return Redirect::back();
     }
 
     public function deleteCategory(Request $request) {
         $category = Category::find($request->id);
         $category->delete();
 
-        return view('admin.modify_category', [
-            "categories" => Category::all()
-        ]);
+        return Redirect::back();
     }
 
     public function getManageOrders(Request $request) {

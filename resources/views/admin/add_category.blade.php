@@ -1,16 +1,16 @@
-@extends("admin.admin_main")
+@extends("todo.admin.main")
 @section("title", "Admin view - Add category")
 @section("content")
-	<p>Add category</p>
+	<h1>Add category</h1>
 
 	<form method="post">
 		{!! csrf_field() !!}
-		<p>Category name: <br/>
-			<input type="text" name="name" placeholder="Category here">
+		<p><strong>Category name</strong>: <br/>
+			<input type="text" name="name" class="form-control" placeholder="Category here">
 		</p>
 
 		<p>
-			Show on navigation <input type="checkbox" name="navitem" value="true">
+			Navitem <input type="checkbox" name="navitem" value="true">
 		</p>
 
 		<input type="submit" value="Add category"/>	
