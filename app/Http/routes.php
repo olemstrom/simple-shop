@@ -26,14 +26,6 @@ Route::get('/', function () {
 	]);
 });
 
-Route::get('/', function(){
-	$products = AdminController::getProductList();
-
-	return veiw('view3', [
-		"view3"=> $products
-	]);
-});
-
 Route::get('/category/{categoryname}', 'ProductController@getProductsByCategory');
 
 
@@ -52,7 +44,6 @@ Route::get('homeAppliance', function() {
 Route::get('games', function() {
 	return view('todo.user.user5');
 });
-
 
 Route::get('/admin', 'AdminController@getHome');
 

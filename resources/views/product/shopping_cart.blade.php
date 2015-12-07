@@ -2,7 +2,7 @@
 <div class="cart-item">
 	<strong>{{$cartItem["product"]["name"]}}</strong> 
 	<span class="cart-item-price">
-		{{formatPrice($cartItem["product"]["price"])}} x {{$cartItem["count"]}}
+		{{formatPrice($cartItem["product"]["price"])}}€ x {{$cartItem["count"]}}kpl
 	</span>
 	<form action="/remove-from-cart" method="post">
 		{!! csrf_field() !!}
