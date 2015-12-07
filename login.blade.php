@@ -1,17 +1,17 @@
-@extends('todo.admin.main')
+@extends('todo.user.main')
 @section('content')
 	<form role="form" method="POST" action="/auth/login">
 		{!! csrf_field() !!}
 		<div class="form-group">
-		  	<label for="email">Email</label>
+		  	<label for="firstName">Email</label>
 		   	<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 		</div>
 		<div class="form-group">
-		  	<label for="password">Password</label>
+		  	<label for="firstName">Password</label>
 		   	<input type="password" class="form-control" name="password" id="password">
 		</div>
 		<div class="form-group">
-		  	<label for="remember_me">Remember me</label>
+		  	<label for="firstName">Remember me</label>
 		   	<input type="checkbox" class="form-control" name="remember">
 		</div>
 		<div class="form-group">
