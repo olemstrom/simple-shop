@@ -25,11 +25,9 @@
 	  	<div class="form-group">
 			<label for="sel2">Category:</label>
 		    <select multiple class="form-control" id="category">
-		    	<option>1</option>
-		        <option>2</option>
-		        <option>3</option>
-		        <option>4</option>
-		        <option>5</option>
+		    	@foreach($navCategories as $category)
+		    		<option value="$category">{{$category->displayname}}</option>
+		    	@endforeach
 		    </select>
 		</div>
 		<div>

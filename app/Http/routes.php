@@ -24,13 +24,21 @@ Route::get('/', function () {
 	]);
 });
 
+Route::get('/', function(){
+	$products = AdminController::getProductList();
+
+	return veiw('view3', [
+		"view3"=> $products
+	]);
+});
+
 Route::get('/category/{categoryname}', 'ProductController@getProductsByCategory');
 
 Route::get('computer', function() {
 	return view('todo.user.user2');
 });
 
-Route::get('elctronics', function() {
+Route::get('electronics', function() {
 	return view('todo.user.user3');
 });
 
@@ -53,6 +61,7 @@ Route::get('adminAddProduct', function() {
 Route::get('adminDelOrModProd', function() {
 	return view('todo.admin.view3');
 });
+
 
 Route::get('/admin', 'AdminController@getHome');
 

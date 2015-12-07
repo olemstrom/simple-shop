@@ -28,6 +28,16 @@ class AdminController extends Controller
         ]);
     }
 
+    private function getProducts($productids) {
+        $products = [];
+        foreach($productids as $index => $id) {
+            $product = Product::find($id);
+            $products[$index] = $product;
+        }
+
+        return $products;
+    }
+
     public function postAddProduct(Request $request) {
         $product = $this->createProduct($request);
 
