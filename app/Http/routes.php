@@ -13,6 +13,7 @@
 
 use App\Category;
 use App\Product;
+use App\Cart;
 
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
@@ -20,7 +21,8 @@ use Illuminate\Http\Request;
 \Debugbar::enable();
 Route::get('/', function () {
     return view('home', [
-    	"allCategories" => Category::all()
+    	"allCategories" => Category::all(),
+    	"cart" => Cart::all()
 	]);
 });
 
