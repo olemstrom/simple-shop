@@ -15,11 +15,28 @@
 				</form>
 			</div>
 
+			<table>
+				<thead>
+					
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{$product->name}}</td>
+					</tr>
+					<tr>
+						<td>{{$product->description}}</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					
+				</tfoot>
+			</table>
+
 			<h3>{{$product->name}}</h3>
 			<p>{{$product->description}}</p>
 			<p>
-				<strong>In stock</strong>: {{$product->count}} <br/>
-				<strong>Price per unit</strong>: {{formatPrice($product->price)}}
+				<strong>In stock</strong>: {{$product->count}} kpl<br/>
+				<strong>Price per unit</strong>: {{formatPrice($product->price)}} €
 			</p>
 		@empty
 			<h1>No products in this category. Sad panda :<</h1>
