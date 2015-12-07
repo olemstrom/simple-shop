@@ -8,33 +8,47 @@ use App\Cart;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Redirect;
 
 class ProductController extends Controller
 {
     
+    public function __construct() {
+        view()->share('cart', Cart::all());
+    }
+
     public function getProductList(Request $request) {
         return view('product.products', [
         	"products" => Product::all(),
-        	"categories" => Category::all(),
-        	"cart" => Cart::all()
+        	"categories" => Category::all()
     	]);
     }
 
     public function getProductsByCategory($categoryname) {
         return view('product.by_category', [
-            "products" => Category::where('name', $categoryname)->first()->products
+            "products" => Category::where('name', $categoryname)->first()->products,
+            "cart" => Cart::all()
         ]);
     }
 
     public function addProductToCart(Request $request) {
     	
-    	$products = $request->product;
-    	foreach($products as $id) {
-    		$count = $request["count-".$id];
-    		Cart::add($id, $count);
-    	}
+    	$productid = $request->product;
+    	$count = $request->count;
 
-    	return redirect("/product-list");
+        Cart::add($productid, $count);
+
+    	return Redirect::back();
+
+    }
+
+    public function removeProductFromCart(Request $request) {
+        
+        $productid = $request->productid;
+        var_dump($productid);
+        Cart::remove($productid);
+
+        return Redirect::back();
 
     }
 

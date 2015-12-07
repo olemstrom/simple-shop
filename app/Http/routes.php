@@ -26,22 +26,6 @@ Route::get('/', function () {
 
 Route::get('/category/{categoryname}', 'ProductController@getProductsByCategory');
 
-Route::get('computer', function() {
-	return view('todo.user.user2');
-});
-
-Route::get('elctronics', function() {
-	return view('todo.user.user3');
-});
-
-Route::get('homeAppliance', function() {
-	return view('todo.user.user4');
-});
-
-Route::get('games', function() {
-	return view('todo.user.user5');
-});
-
 Route::get('adminHome', function() {
 	return view('todo.admin.view1');
 });
@@ -76,6 +60,7 @@ Route::post('/admin/delete-orders', 'AdminController@deleteOrders');
 
 Route::get('/product-list', 'ProductController@getProductList');
 Route::post('/add-to-cart', 'ProductController@addProductToCart');
+Route::post('/remove-from-cart', 'ProductController@removeProductFromCart');
 
 Route::get('/checkout', 'CheckoutController@getCheckout');
 Route::post('/create-order', 'CheckoutController@createOrder');

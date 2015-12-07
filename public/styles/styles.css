@@ -41,3 +41,12 @@ a {
 html, body {
   height: 100%;
 }
+
+.border-bottom {
+  border-bottom: 1px solid #000;
+}
+
+.popover {
+  max-width: 400px;
+  min-width: 250px;
+}

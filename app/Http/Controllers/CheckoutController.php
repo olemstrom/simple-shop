@@ -12,11 +12,12 @@ use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
+    public function __construct() {
+        view()->share('cart', Cart::all());
+    }
 
     public function getCheckout() {
-        return view("checkout", [
-            "cart" => Cart::all()
-        ]);
+        return view("checkout");
     }
 
     public function createOrder(Request $request) {
