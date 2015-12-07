@@ -5,8 +5,16 @@
   		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  		<script>$(document).ready(function(){$('[data-toggle="popover"]').popover();});</script>
-  		<link rel="stylesheet" href="styles/styles.css">
+  		<script>
+  			$(document).ready(function(){
+  				$('.shopping-cart-btn').popover({
+  					html: true,
+  					content: $('.shopping-cart-content').html()
+  				});
+
+  			});
+		</script>
+  		<link rel="stylesheet" href="/styles/styles.css">
 		<title>Awsome Webstore</title>
 	</head>
 	<body>
@@ -28,7 +36,7 @@
 		      		@endforeach
 		      	</ul>
 			    <ul class="nav navbar-nav navbar-right">
-			    	<li><a href="#" data-toggle="popover" data-placement="bottom" title="Items in your shopping cart" data-content="Empty"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+			    	<li><a href="#" class="shopping-cart-btn" data-toggle="popover" data-placement="bottom" title="Items in your shopping cart" ><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
 			    </ul>
 		    </div>
 		  </div>
@@ -45,5 +53,9 @@
 			<p>Online store</p>
 		</footer>
 	-->
+
+	<div class="shopping-cart-content" style="display:none;">
+		@include("product.shopping_cart")
+	</div>
 	</body>
 </html>

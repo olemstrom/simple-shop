@@ -28,6 +28,13 @@ class Cart {
 		session()->put("cart", []);
 	}
 
+	public static function remove($id) {
+		$cart = Cart::getCart();
+		var_dump($id);
+		unset($cart[$id]);
+		session()->put("cart", $cart);
+	}
+
  	private static function getCart() {
     	$cart = session()->get("cart");
 

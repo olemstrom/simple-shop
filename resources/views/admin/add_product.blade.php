@@ -1,6 +1,6 @@
-@extends("admin.admin_main")
+@extends('todo.admin.main')
 @section("title", "Admin view")
-@section("content")
+@section('content')
 	@if (count($errors) > 0)
 	    <div class="alert alert-danger">
 	        <ul>
@@ -10,52 +10,36 @@
 	        </ul>
 	    </div>
 	@endif
-
-	<p>Add product</<p></p>
-
-	<form method="post">
+	<h1>Add product</h1>
+	<form role="form" method="post">
 		{!! csrf_field() !!}
-		<p>
-			<label for="name">
-				Name: <br/> 
-				<input type="text" name="name" id="name" placeholder="Product name here" />
-			</label>
-		</p>
-
-		<p>
-			<label for="desc">
-				Product description: <br/>
-				<textarea type="textbox" name="description" id="desc" placeholder="Product description here">
-					
-				</textarea>	
-			</label>
-		</p>
-
-		<p>
-			<label for="categories">
-				Categories: <br/>
-				<select name="categories[]" id="categories" multiple>
-					@foreach ($categories as $category)
-	                	<option value="{{$category->categoryid}}">{{$category->displayname}}</option>
-	            	@endforeach
-				</select>	
-			</label>
-		</p>
-
-		
-		<p>
-			<label for="price">
-				Price: <br/>
-				<input type="number" name="price" id="price" placeholder="Product price">
-			</label>
-		</p>
-		<p>
-			<label for="count">
-				<input type="number" name="count" id="count" placeholder="Product count">
-			</label>
-		</p>
-
-		<input type="submit" value="Add product"/>
+		<div class="form-group">
+	  		<label for="name">Product name:</label>
+	    	<input type="text" name="name" id="name" class="form-control" placeholder="Product name here" />
+	  	</div>
+	  	<div class="form-group">
+	    	<label for="price">Price:</label>
+	    	<input type="number" class="form-control" id="price" name="price">
+	  	</div>
+	  	<div class="form-group">
+			<label for="desc">Description:</label>
+  			<textarea class="form-control" rows="5" name="description" id="desc"></textarea>
+		</div>
+		<div class="form-group">
+	  		<label for="count">Count:</label>
+	    	<input type="integer" class="form-control" id="count" name="count">
+	  	</div>
+	  	<div class="form-group">
+			<label for="categories">Category:</label>
+			<select name="categories[]" class="form-control" id="categories" multiple>
+				@foreach ($categories as $category)
+                	<option value="{{$category->categoryid}}">{{$category->displayname}}</option>
+            	@endforeach
+			</select>
+		    
+		</div>
+		<div>
+			<input type="submit" value="Add product" class="btn btn-success">
+		</div>	
 	</form>
-	
 @endsection
