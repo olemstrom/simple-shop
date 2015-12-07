@@ -89,7 +89,7 @@ class AdminController extends Controller
     }
 
     public function getModifyProducts() {
-        return view('admin.modify-products', [
+        return view('admin.modify_products', [
             "products" => Product::with('categories')->get(),
             "categories" => Category::all()
         ]);

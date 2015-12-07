@@ -50,3 +50,8 @@ html, body {
   max-width: 400px;
   min-width: 250px;
 }
+
+.products-dropdown {
+  padding-bottom:20px;
+  margin-bottom:20px;
+}

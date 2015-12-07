@@ -5,7 +5,7 @@
   		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  		<link rel="stylesheet" href="styles/styles.css">
+  		<link rel="stylesheet" href="/styles/styles.css">
 		<title>Awsome Webstore</title>
 	</head>
 	<body>
@@ -21,10 +21,12 @@
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      	<ul class="nav navbar-nav">
-			        @yield('tabs')
+			        <li><a href="/admin">Home</a></li>
+					<li><a href="/admin/add-product">Lisää tuote</a></li>
+					<li><a href="/admin/modify-products">Tuotteiden hallinta</a></li>
 		      	</ul>
 			    <ul class="nav navbar-nav navbar-right">
-			    	<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			    	<li><a href="/auth/logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
 			    </ul>
 		    </div>
 		  </div>
@@ -34,8 +36,6 @@
 			@yield('content')
 		</div>
 
-		<footer class="container-fluid bg-4 text-center">
-			<p>Online store</p>
-		</footer>
+	@yield('scripts')
 	</body>
 </html>
