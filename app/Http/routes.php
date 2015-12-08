@@ -19,6 +19,8 @@ use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 
 \Debugbar::enable();
+
+// General routes
 Route::get('/', function () {
     return view('home', [
     	"allCategories" => Category::all(),
@@ -28,34 +30,22 @@ Route::get('/', function () {
 
 Route::get('/category/{categoryname}', 'ProductController@getProductsByCategory');
 
-
-Route::get('computer', function() {
-	return view('todo.user.user2');
-});
-
-Route::get('electronics', function() {
-	return view('todo.user.user3');
-});
-
-Route::get('homeAppliance', function() {
-	return view('todo.user.user4');
-});
-
-Route::get('games', function() {
-	return view('todo.user.user5');
-});
-
+// Admin routes
 Route::get('/admin', 'AdminController@getHome');
 
+// Product routes
 Route::get('/admin/add-product', 'AdminController@getAddProduct');
 Route::post('/admin/add-product', 'AdminController@postAddProduct');
-
-Route::get('/admin/add-category', 'AdminController@getAddCategory');
-Route::post('/admin/add-category', 'AdminController@postAddCategory');
 
 Route::get('/admin/modify-products', 'AdminController@getModifyProducts');
 Route::post('/admin/modify-products', 'AdminController@postModifyProducts');
 Route::post('/admin/delete-product', 'AdminController@deleteProduct');
+
+Route::get('/product-list', 'ProductController@getProductList');
+
+// Category routes
+Route::get('/admin/add-category', 'AdminController@getAddCategory');
+Route::post('/admin/add-category', 'AdminController@postAddCategory');
 
 Route::get('/admin/modify-categories', 'AdminController@getModifyCategories');
 Route::post('/admin/modify-categories', 'AdminController@postModifyCategories');
@@ -64,11 +54,11 @@ Route::post('/admin/delete-category', 'AdminController@deleteCategory');
 Route::get('/admin/manage-orders', 'AdminController@getManageOrders');
 Route::post('/admin/delete-orders', 'AdminController@deleteOrders');
 
-
-Route::get('/product-list', 'ProductController@getProductList');
+// Shopping cart routes
 Route::post('/add-to-cart', 'ProductController@addProductToCart');
 Route::post('/remove-from-cart', 'ProductController@removeProductFromCart');
 
+// Order routes
 Route::get('/checkout', 'CheckoutController@getCheckout');
 Route::post('/create-order', 'CheckoutController@createOrder');
 

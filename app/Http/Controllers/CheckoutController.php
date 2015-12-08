@@ -17,7 +17,7 @@ class CheckoutController extends Controller
     }
 
     public function getCheckout() {
-        return view("todo.user.checkout");
+        return view("product.checkout");
     }
 
     public function createOrder(Request $request) {
