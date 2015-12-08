@@ -31,8 +31,8 @@
 		<form role="form" action="/create-order" method="post">
 			{!! csrf_field() !!}
 			@foreach($cart as $cartItem)
-				<input type="hidden" name="product[]" value="{{$c['product']->productid}}">
-				<input type="hidden" name="count[]" value="{{$c['count']}}">
+				<input type="hidden" name="product[]" value="{{$cart['product']->productid}}">
+				<input type="hidden" name="count[]" value="{{$cart['count']}}">
 			@endforeach
 			<div class="form-group">
 		  		<label for="firstName">First name</label>
