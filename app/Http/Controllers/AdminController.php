@@ -164,6 +164,9 @@ class AdminController extends Controller
     }
 
     public function deleteOrders(Request $request) {
+        $this->validate($request, [
+            'order' => 'required|array'
+            ]);
         foreach($request->order as $id) {
             $order = Order::find($id);
             foreach($order->products as $product) {
