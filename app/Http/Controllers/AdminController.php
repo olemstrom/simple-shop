@@ -43,7 +43,7 @@ class AdminController extends Controller
 
     private function createProduct($request) {
         
-        validateProduct($request);
+        $this->validateProduct($request);
 
         $product = new Product();
         $product->name = $request->name;
@@ -102,7 +102,7 @@ class AdminController extends Controller
     }
 
     public function postModifyProducts(Request $request) {
-        validateProduct($request);
+        $this->validateProduct($request);
         $product = Product::find($request->productid);
         $product->updateCategories($request->categories);
 
