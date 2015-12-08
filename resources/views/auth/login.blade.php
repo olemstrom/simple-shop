@@ -12,7 +12,7 @@
 		</div>
 		<div class="form-group">
 		  	<label for="remember_me">Remember me</label>
-		   	<input type="checkbox" class="form-control" name="remember">
+		   	<input type="checkbox" name="remember">
 		</div>
 		<div class="form-group">
 		  	<button type="submit" class="btn btn-success" >Login</button>

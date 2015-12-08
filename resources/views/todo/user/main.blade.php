@@ -43,7 +43,7 @@
 		</nav>
 
 		<div class="container-fluid">
-			<div class="col-md-8 text-center center-block">
+			<div class="col-md-8 center-block">
 				@yield('content')
 			</div>
 		</div>
