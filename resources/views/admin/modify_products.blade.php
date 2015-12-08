@@ -27,9 +27,7 @@
 		  	</div>
 		  	<div class="form-group">
 				<label for="desc">Description:</label>
-	  			<textarea class="form-control" rows="5" name="description" id="desc">
-	  				{{$product->description}}
-	  			</textarea>
+	  			<textarea class="form-control" rows="5" name="description" id="desc">{{$product->description}}</textarea>
 			</div>
 			<div class="form-group">
 		  		<label for="count">Count:</label>
