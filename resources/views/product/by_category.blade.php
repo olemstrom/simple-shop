@@ -52,7 +52,7 @@
 			</div>
 		@empty
 			<h1>No products in this category. Sad panda :<</h1>
-			<img src="http://i.imgur.com/74B6GaH.gif" alt="Panda fail">
+			<img src="//i.imgur.com/74B6GaH.gif" alt="Panda fail">
 		@endforelse	
 	</div>
 @endsection
