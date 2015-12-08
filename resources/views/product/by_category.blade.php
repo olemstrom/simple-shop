@@ -4,7 +4,7 @@
 	<div class="col-md-8 text-left">
 
 		@forelse($products as $product)
-			<div class="border-bottom">
+			<div >
 				<table class="table table-bordered ">
 					<thead>
 						<tr class="success">

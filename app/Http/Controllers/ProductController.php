@@ -32,7 +32,11 @@ class ProductController extends Controller
     }
 
     public function addProductToCart(Request $request) {
-    	
+    	$this->validate($request, [
+            'product' => 'required',
+            'count' => 'required|min:1|numeric'
+        ]);
+
     	$productid = $request->product;
     	$count = $request->count;
 

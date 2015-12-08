@@ -42,14 +42,8 @@ class AdminController extends Controller
     }
 
     private function createProduct($request) {
-        $this->validate($request, [
-            'name' => 'required|max:255',
-            'description' => 'required',
-            'categories' => 'required|array',
-            'count' => 'required|numeric|min:1',
-            'price' => 'required|numeric|min:0'
-        ]);
-
+        
+        validateProduct($request);
 
         $product = new Product();
         $product->name = $request->name;
@@ -58,6 +52,16 @@ class AdminController extends Controller
         $product->price = intval($request->price*100);
 
         return $product;
+    }
+
+    private function validateProduct($request) {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'description' => 'required',
+            'categories' => 'required|array',
+            'count' => 'required|numeric|min:1',
+            'price' => 'required|numeric|min:0'
+        ]);
     }
 
     public function getAddCategory() {
@@ -98,6 +102,7 @@ class AdminController extends Controller
     }
 
     public function postModifyProducts(Request $request) {
+        validateProduct($request);
         $product = Product::find($request->productid);
         $product->updateCategories($request->categories);
 

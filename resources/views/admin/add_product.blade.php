@@ -1,15 +1,6 @@
 @extends("admin.main")
 @section("title", "Admin view")
 @section('content')
-	@if (count($errors) > 0)
-	    <div class="alert alert-danger">
-	        <ul>
-	            @foreach ($errors->all() as $error)
-	                <li>{{ $error }}</li>
-	            @endforeach
-	        </ul>
-	    </div>
-	@endif
 	<h1>Add product</h1>
 	<form role="form" method="post">
 		{!! csrf_field() !!}

@@ -1,15 +1,7 @@
 @extends("admin.main")
 @section("title", "Admin view")
 @section('content')
-	@if (count($errors) > 0)
-	    <div class="alert alert-danger">
-	        <ul>
-	            @foreach ($errors->all() as $error)
-	                <li>{{ $error }}</li>
-	            @endforeach
-	        </ul>
-	    </div>
-	@endif
+	
 	<div class=" products-dropdown border-bottom">
 		<h1>Modify products</h1>
 		<label for="products">Select a product:</label> <br/>
