@@ -1,4 +1,4 @@
-@extends('todo.user.main')
+@extends('main')
 
 @section('content')
 	@if(count($cart) > 0)

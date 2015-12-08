@@ -1,4 +1,4 @@
-@extends("todo.admin.main")
+@extends("admin.main")
 @section("title", "Admin view - Manage orders")
 @section("content")
 	<h1>Manage orders</h1>

@@ -1,4 +1,4 @@
-@extends('todo.user.main')
+@extends('main')
 
 @section('content')
 	<div class="col-md-8 text-left">

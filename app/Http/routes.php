@@ -54,7 +54,7 @@ Route::post('/admin/delete-category', 'AdminController@deleteCategory');
 Route::get('/admin/manage-orders', 'AdminController@getManageOrders');
 Route::post('/admin/delete-orders', 'AdminController@deleteOrders');
 
-// Shopping cart routes
+// Shopping cart routesg
 Route::post('/add-to-cart', 'ProductController@addProductToCart');
 Route::post('/remove-from-cart', 'ProductController@removeProductFromCart');
 
