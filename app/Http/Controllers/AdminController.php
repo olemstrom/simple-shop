@@ -47,7 +47,7 @@ class AdminController extends Controller
 
         $product = new Product();
         $product->name = $request->name;
-        $product->description = $request->description;
+        $product->description = trim($request->description);
         $product->count = $request->count;
         $product->price = intval($request->price*100);
 
